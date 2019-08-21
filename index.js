@@ -25,11 +25,9 @@ client.on("ready", () => {
 
             // A new track is now playing, so set the discord status to that track.
             if (event === "nowPlaying") {
-                const startTimestamp = new Date();
                 await client.setActivity({
                     details: track.name,
                     state: `by ${track.artist['#text']}`,
-                    startTimestamp,
                     largeImageKey: process.env.LARGE_IMAGE_KEY,
                     largeImageText: process.env.LARGE_IMAGE_TOOLTIP,
                     smallImageKey: process.env.SMALL_IMAGE_KEY,
